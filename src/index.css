@@ -6,97 +6,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
+  /* --- DEFAULT THEME (FORCED TO FINAL DARK MODE) --- */
   :root {
-    /* Core Brand Colors - Tech Professional Theme */
-    --background: 220 18% 97%;
-    --foreground: 220 15% 15%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 220 15% 15%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 15%;
-
-    /* Primary - Tech Blue with AI accent */
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 217 91% 70%;
-
-    /* Secondary - Professional Gray */
-    --secondary: 220 15% 94%;
-    --secondary-foreground: 220 15% 25%;
-
-    /* Muted tones */
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 9% 46%;
-
-    /* Accent - AI Purple for highlights */
-    --accent: 262 83% 58%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 217 91% 60%;
-
-    /* Professional Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 58%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 15% 98%));
-    --gradient-tech: linear-gradient(90deg, hsl(217 91% 60% / 0.1), hsl(262 83% 58% / 0.1));
-
-    /* Professional Shadows */
-    --shadow-elegant: 0 4px 20px hsl(220 15% 15% / 0.08);
-    --shadow-card: 0 2px 10px hsl(220 15% 15% / 0.05);
-    --shadow-glow: 0 0 30px hsl(217 91% 60% / 0.2);
-
-    /* Smooth Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
+    /* Core: Dark navy background with slightly darker cards */
+    --background: 225 15% 15%; 
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    /* Card */
+    --card: 225 15% 10%;
     --card-foreground: 210 40% 98%;
 
+    /* Popover */
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    
-    /* --- THIS IS THE FIX --- */
-    --secondary: 217.2 32.6% 25.5%; /* Changed from 17.5% to make the toggle button visible */
-    --secondary-foreground: 210 40% 98%;
+    /* Primary (Buttons, Gradients, Decorative Circles) */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
+    /* Accent (Gradients, Decorative Circles) */
+    --accent: 262 83% 58%;
     --accent-foreground: 210 40% 98%;
 
+    /* Secondary (For visible toggle button) */
+    --secondary: 217.2 32.6% 25.5%; 
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted */
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    /* Destructive */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    
-    /* --- THIS IS THE FIX --- */
-    --border: 217.2 32.6% 30.5%;    /* Changed from 17.5% to give the toggle button a visible border */
+
+    /* Border (For visible toggle button), Input, Ring */
+    --border: 217.2 32.6% 30.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 217 91% 60%;
+    --radius: 0.75rem; /* Rounded corners for cards */
+
+    /* Sidebar (Kept for compatibility) */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* .dark class uses the same variables to ensure theme toggle doesn't break it */
+  .dark {
+    --background: 225 15% 15%; 
+    --foreground: 210 40% 98%;
+    --card: 225 15% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 217.2 32.6% 25.5%; 
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 30.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 217 91% 60%;
+    --radius: 0.75rem;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -112,47 +94,41 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', system-ui, sans-serif;
   }
-
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold tracking-tight;
   }
 }
 
+/* --- CUSTOM UTILITY CLASSES --- */
 @layer components {
-  .hero-gradient {
-    background: var(--gradient-hero);
+  /* For gradient headings and keywords */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
-  
-  .card-gradient {
-    background: var(--gradient-card);
+
+  /* For the profile image glow in the hero section */
+  .image-glow {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.5), 0 0 70px hsl(var(--accent) / 0.3);
   }
-  
-  .tech-gradient {
-    background: var(--gradient-tech);
+
+  /* NEW: For cards with decorative glowing circles */
+  .decorative-card {
+    @apply relative overflow-hidden bg-card p-6 rounded-lg; /* Ensures style is contained */
   }
-  
-  .shadow-elegant {
-    box-shadow: var(--shadow-elegant);
+  .decorative-card::before {
+    content: '';
+    @apply absolute -top-8 -left-8 w-32 h-32;
+    background-image: radial-gradient(circle, hsl(var(--primary) / 0.15), transparent 70%);
+    filter: blur(24px);
   }
-  
-  .shadow-card {
-    box-shadow: var(--shadow-card);
-  }
-  
-  .shadow-glow {
-    box-shadow: var(--shadow-glow);
-  }
-  
-  .transition-smooth {
-    transition: var(--transition-smooth);
-  }
-  
-  .transition-bounce {
-    transition: var(--transition-bounce);
+  .decorative-card::after {
+    content: '';
+    @apply absolute -bottom-8 -right-8 w-32 h-32;
+    background-image: radial-gradient(circle, hsl(var(--accent) / 0.15), transparent 70%);
+    filter: blur(24px);
   }
 }
