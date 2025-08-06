@@ -2,6 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowDown } from "lucide-react";
 
+// 1. THIS IS THE FIX: IMPORT THE IMAGE DIRECTLY
+// We import the photo from the public folder and assign it to a variable.
+import profilePhoto from '/lovable-uploads/8cd6520c-f1dc-4280-8108-685d0eba39a8.png';
+
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -23,11 +27,15 @@ const HeroSection = () => {
             {/* Profile Image */}
             <div className="relative">
               <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden shadow-glow border-4 border-primary/20">
+                
+                {/* 2. THIS IS THE FIX: USE THE IMPORTED VARIABLE */}
+                {/* Now the 'src' uses the variable, and Vite will handle the path correctly. */}
                 <img 
-                  src="/lovable-uploads/8cd6520c-f1dc-4280-8108-685d0eba39a8.png"
+                  src={profilePhoto}
                   alt="Sampavi Jesuthas"
                   className="w-full h-full object-cover transition-smooth hover:scale-105"
                 />
+
               </div>
               {/* Decorative ring */}
               <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-spin-slow"></div>
