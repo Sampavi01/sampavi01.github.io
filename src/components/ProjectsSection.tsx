@@ -59,7 +59,7 @@ Implemented CrewAI orchestration for coordinated multi-agent workflows solving c
     ]
   },
   {
-    mainHeading: "Machine Learning & NLP",
+    title: "Machine Learning & NLP",
     subProjects: [
       {
         title: "NER, Hyperparameter Tuning & Customer Segmentation (KMeans)",
@@ -87,59 +87,53 @@ const ProjectsSection = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) =>
-            project.mainHeading ? (
-              <div key={index} className="col-span-full">
-                <h3 className="text-2xl font-bold mb-6">{project.mainHeading}</h3>
-                <div className="grid md:grid-cols-2 gap-8">
+            project.subProjects ? (
+              <Card
+                key={index}
+                className="group hover:shadow-glow transition-all duration-300 hover:scale-105 border-0 shadow-elegant card-gradient overflow-hidden"
+              >
+                <CardHeader>
+                  <CardTitle className="text-xl md:text-2xl font-semibold text-foreground leading-tight">
+                    {project.title}
+                  </CardTitle>
+                </CardHeader>
+
+                <CardContent className="space-y-4">
                   {project.subProjects.map((sub, subIndex) => (
-                    <Card
-                      key={subIndex}
-                      className="group hover:shadow-glow transition-all duration-300 hover:scale-105 border-0 shadow-elegant card-gradient overflow-hidden"
-                    >
-                      <CardHeader className="relative">
-                        <CardTitle className="text-xl md:text-2xl font-semibold text-foreground leading-tight">
-                          {sub.title}
-                        </CardTitle>
-                      </CardHeader>
-
-                      <CardContent className="space-y-4">
-                        <CardDescription className="text-base leading-relaxed text-muted-foreground whitespace-pre-line">
-                          {sub.description}
-                        </CardDescription>
-
-                        <div className="flex flex-wrap gap-2">
-                          {sub.techStack.map((tech, techIndex) => (
-                            <Badge
-                              key={techIndex}
-                              variant="secondary"
-                              className="tech-gradient border-primary/20 text-primary font-medium"
-                            >
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row gap-2 mt-2">
-                          {sub.links.map((link, linkIndex) => (
-                            <Button
-                              key={linkIndex}
-                              variant="outline"
-                              className="flex items-center gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                              asChild
-                            >
-                              <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                                <Github size={18} />
-                                <span>{link.label}</span>
-                                <ExternalLink size={16} className="group-hover:translate-x-1 transition-smooth" />
-                              </a>
-                            </Button>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
+                    <div key={subIndex}>
+                      <h4 className="font-light text-lg">{sub.title}</h4>
+                      <p className="text-base text-muted-foreground whitespace-pre-line">{sub.description}</p>
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        {sub.techStack.map((tech, techIndex) => (
+                          <Badge
+                            key={techIndex}
+                            variant="secondary"
+                            className="tech-gradient border-primary/20 text-primary font-medium"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                      <div className="flex flex-col sm:flex-row gap-2 mt-2">
+                        {sub.links.map((link, linkIndex) => (
+                          <Button
+                            key={linkIndex}
+                            variant="outline"
+                            className="flex items-center gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                            asChild
+                          >
+                            <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                              <Github size={18} />
+                              <span>{link.label}</span>
+                              <ExternalLink size={16} className="group-hover:translate-x-1 transition-smooth" />
+                            </a>
+                          </Button>
+                        ))}
+                      </div>
+                    </div>
                   ))}
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             ) : (
               <Card
                 key={index}
@@ -198,3 +192,4 @@ const ProjectsSection = () => {
 };
 
 export default ProjectsSection;
+
