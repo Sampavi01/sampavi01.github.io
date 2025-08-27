@@ -2,18 +2,36 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 
 const skills = [
-  "AI Development",
+  // AI & Machine Learning
+  "Generative AI",
   "Large Language Models (LLM)",
+  "RAG",
+  "Multi-Agent Systems",
+  "Deep Learning",
+  "Time Series Forecasting",
+  "NLP",
+  "Hyperparameter Tuning",
+
+  // Programming & Data Science
   "Python",
-  "CrewAI",
-  "Streamlit",
-  "FastAPI",
-  "Gemini API",
-  "Keras",
   "TensorFlow",
-  "ChromaDB",
-  "Retrieval-Augmented Generation (RAG)",
-  "Named Entity Recognition (NER)"
+  "Keras",
+  "PyTorch",
+  "Scikit-learn",
+  "Pandas",
+  "NumPy",
+
+  // AI App Development
+  "FastAPI",
+  "Streamlit",
+  "LangChain",
+  "CrewAI",
+  "Gemini API",
+
+  // Developer Tools
+  "Git & GitHub",
+  "VSCode",
+  "Modular System Design"
 ];
 
 const SkillsSection = () => {
