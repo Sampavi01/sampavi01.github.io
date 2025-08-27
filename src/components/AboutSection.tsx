@@ -11,26 +11,23 @@ const AboutSection = () => {
           
           <Card className="p-8 md:p-10 shadow-elegant border-0 card-gradient">
             <div className="relative">
-              {/* Decorative accent */}
+              {/* Decorative accents */}
               <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary/20 rounded-full"></div>
               <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-accent/20 rounded-full"></div>
               
               <p className="text-lg md:text-xl leading-relaxed text-foreground/90">
-                I am a passionate and skilled{" "}
-                <span className="text-primary font-semibold">AI Developer</span>{" "}
-                with a strong focus on creating autonomous systems and leveraging the power of{" "}
-                <span className="text-accent font-semibold">Large Language Models (LLMs)</span>. 
-                My experience includes developing modular AI agents for real-time web analysis, 
-                building interactive PDF-powered chatbots with{" "}
-                <span className="text-primary font-semibold">Retrieval-Augmented Generation (RAG)</span>, 
-                and designing creative AI-driven applications.
+                I am a passionate <span className="text-primary font-semibold">AI Developer</span> 
+                with a strong interest in building intelligent and practical AI applications. 
+                I have experience developing modular AI agents, interactive chatbots using{" "}
+                <span className="text-accent font-semibold">Retrieval-Augmented Generation (RAG)</span>, 
+                and other AI-driven tools.
               </p>
               
               <p className="text-lg md:text-xl leading-relaxed text-foreground/90 mt-6">
-                I am proficient in{" "}
-                <span className="text-accent font-semibold">Python</span>{" "}
-                and a range of cutting-edge AI frameworks and tools, always eager to tackle 
-                complex challenges and build impactful solutions.
+                Proficient in <span className="text-accent font-semibold">Python</span> and modern AI frameworks, 
+                I enjoy tackling complex problems, designing scalable solutions, and creating applications that 
+                combine <span className="text-primary font-semibold">machine learning</span>, 
+                <span className="text-accent font-semibold"> deep learning</span>, and data-driven insights.
               </p>
             </div>
           </Card>
