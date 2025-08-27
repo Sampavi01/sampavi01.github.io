@@ -5,28 +5,75 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "Autonomous AI Agents for Real-Time Web Search and Analysis",
-    description: "A modular framework that empowers AI agents to autonomously search, analyze, and process information from the web. Designed for orchestrating complex, multi-step tasks and extracting actionable insights from live internet data.",
-    techStack: ["Python", "CrewAI", "Google Gemini API", "SerperDevTool", "LiteLLM"],
-    githubUrl: "https://github.com/Sampavi01/News-AI-Agents.git"
+    title: "Full-Stack RAG Chatbot (RagBot 2.0)",
+    description: `Built a FastAPI backend for multi-PDF ingestion, vector storage, and context-aware Q&A.
+Developed a Streamlit client with real-time chat interface, document upload, and history management.
+Integrated Gemini LLM, Hugging Face embeddings, and ChromaDB to enable scalable, retrieval-augmented conversations.`,
+    techStack: ["Python", "FastAPI", "Streamlit", "LangChain", "ChromaDB", "Hugging Face", "Gemini API"],
+    links: [
+      { label: "GitHub", url: "https://github.com/Sampavi01/RagChatbot.git" }
+    ]
   },
   {
-    title: "RagBot 2.0: PDF-Powered Chatbot with Retrieval-Augmented Generation",
-    description: "RagBot 2.0 is a Streamlit-based chatbot that enables users to upload PDF documents and interact with their content using advanced retrieval-augmented generation (RAG) techniques. The system ingests PDFs, stores them in a vector database, and provides intelligent, context-aware responses.",
-    techStack: ["Python", "Streamlit", "FastAPI", "ChromaDB", "PyPDF2"],
-    githubUrl: "https://github.com/Sampavi01/RagChatbot.git"
+    title: "Advanced Time Series Forecasting on Energy Data",
+    description: `Built forecasting pipelines combining statistical models, ML regressors, and deep learning architectures (RNN, LSTM, GRU, CNN-LSTM, Transformer).
+Engineered lag features, rolling statistics, and Fourier terms to capture multiple seasonal patterns.
+Demonstrated consistent improvements of modern deep learning models over classical baselines.`,
+    techStack: ["Python", "TensorFlow", "Scikit-learn", "Statsmodels"],
+    links: [
+      { label: "GitHub", url: "https://github.com/Sampavi01/Advanced_Time_Series_Forecasting.git" }
+    ]
   },
   {
-    title: "WanderWise: Interactive AI Storyteller for Colombo",
-    description: "A command-line AI-powered tour guide that personalizes your journey through Colombo, Sri Lanka. Choose your persona and explore local places, cultures, and foods with engaging stories, quizzes, and secrets.",
-    techStack: ["Jac Language", "Python", "Gemini LLM API", "CLI", "JSON"],
-    githubUrl: "https://github.com/Sampavi01/AI-TravelGuide.git"
+    title: "MultiTool Modular Chatbot (MCP Agent)",
+    description: `Built a multi-agent conversational platform integrating math, weather, dictionary, and research tools.
+Developed a Streamlit interface for real-time chat and unified query routing across all tools.
+Engineered asynchronous MCP servers with Groq Llama orchestration for context-aware responses.
+Delivered a scalable, modular platform for interactive problem-solving and knowledge retrieval.`,
+    techStack: ["Python", "FastMCP", "Streamlit", "LangGraph", "Groq Llama", "OpenWeatherMap API", "Arxiv API"],
+    links: [
+      { label: "GitHub MCP Agent", url: "https://github.com/Sampavi01/Multi_mcp_agent.git" },
+      { label: "Knowledge MCP", url: "https://github.com/Sampavi01/Knowledge-MCP.git" }
+    ]
   },
   {
-    title: "Named Entity Recognition (NER) with BiLSTM-LSTM Model",
-    description: "This project builds a deep learning model to perform Named Entity Recognition on text data using a BiLSTM-LSTM architecture.",
-    techStack: ["Python", "Pandas", "scikit-learn", "Keras", "TensorFlow"],
-    githubUrl: "https://github.com/Sampavi01/NER-model.git"
+    title: "Multi-Agent AI Platform",
+    description: `Built a modular multi-agent AI system for research, math, and knowledge tools.
+Developed graph-based workflows for dynamic, context-aware conversations.
+Designed a clean Streamlit interface supporting dynamic queries to YouTube, DuckDuckGo, Arxiv, Wikipedia, weather, and Python REPL.`,
+    techStack: ["Python", "Streamlit", "LangGraph", "LangChain", "Groq Llama", "Arxiv/Wikipedia/Weather APIs"],
+    links: [
+      { label: "MultiAI Skeleton", url: "https://github.com/Sampavi01/MultiAI-Skeleton.git" },
+      { label: "MultiToolBot", url: "https://github.com/Sampavi01/MultiToolBot.git" }
+    ]
+  },
+  {
+    title: "CrewAI Autonomous Agents",
+    description: `Built a modular AI agent framework for autonomous web search, analysis, and information processing.
+Leveraged Google Gemini for advanced reasoning and natural language understanding.
+Integrated SerperDevTool for live internet search and real-time data extraction.
+Implemented CrewAI orchestration for coordinated multi-agent workflows solving complex, multi-step tasks.`,
+    techStack: ["Python", "CrewAI", "Google Gemini", "SerperDevTool", "LiteLLM"],
+    links: [
+      { label: "GitHub", url: "https://github.com/Sampavi01/News-AI-Agents.git" }
+    ]
+  },
+  {
+    mainHeading: "Machine Learning & NLP",
+    subProjects: [
+      {
+        title: "NER, Hyperparameter Tuning & Customer Segmentation (KMeans)",
+        description: `Built a BiLSTM-LSTM NER model with token/tag preprocessing.
+Performed hyperparameter tuning (Grid & Random Search) on neural networks.
+Developed RFM-based customer segmentation using KMeans, with interactive visualizations.`,
+        techStack: ["Python", "TensorFlow/Keras", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Gradio"],
+        links: [
+          { label: "Hyperparameter Tuning", url: "https://github.com/Sampavi01/Hyperparameter_Tuning.git" },
+          { label: "NER Model", url: "https://github.com/Sampavi01/NER-model.git" },
+          { label: "RFM Customer Segmentation", url: "https://github.com/Sampavi01/RFM-Customer-Segmentation-App-with-KMeans.git" }
+        ]
+      }
+    ]
   }
 ];
 
@@ -37,62 +84,113 @@ const ProjectsSection = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
           Featured Projects
         </h2>
-        
+
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {projects.map((project, index) => (
-            <Card 
-              key={index}
-              className="group hover:shadow-glow transition-all duration-300 hover:scale-105 border-0 shadow-elegant card-gradient overflow-hidden"
-            >
-              <CardHeader className="relative">
-                {/* Project number indicator */}
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-bold">
-                  {index + 1}
-                </div>
-                
-                <CardTitle className="text-xl md:text-2xl font-semibold text-foreground leading-tight">
-                  {project.title}
-                </CardTitle>
-              </CardHeader>
-              
-              <CardContent className="space-y-4">
-                <CardDescription className="text-base leading-relaxed text-muted-foreground">
-                  {project.description}
-                </CardDescription>
-                
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2">
-                  {project.techStack.map((tech, techIndex) => (
-                    <Badge 
-                      key={techIndex} 
-                      variant="secondary" 
-                      className="tech-gradient border-primary/20 text-primary font-medium"
+          {projects.map((project, index) =>
+            project.mainHeading ? (
+              <div key={index} className="col-span-full">
+                <h3 className="text-2xl font-bold mb-6">{project.mainHeading}</h3>
+                <div className="grid md:grid-cols-2 gap-8">
+                  {project.subProjects.map((sub, subIndex) => (
+                    <Card
+                      key={subIndex}
+                      className="group hover:shadow-glow transition-all duration-300 hover:scale-105 border-0 shadow-elegant card-gradient overflow-hidden"
                     >
-                      {tech}
-                    </Badge>
+                      <CardHeader className="relative">
+                        <CardTitle className="text-xl md:text-2xl font-semibold text-foreground leading-tight">
+                          {sub.title}
+                        </CardTitle>
+                      </CardHeader>
+
+                      <CardContent className="space-y-4">
+                        <CardDescription className="text-base leading-relaxed text-muted-foreground whitespace-pre-line">
+                          {sub.description}
+                        </CardDescription>
+
+                        <div className="flex flex-wrap gap-2">
+                          {sub.techStack.map((tech, techIndex) => (
+                            <Badge
+                              key={techIndex}
+                              variant="secondary"
+                              className="tech-gradient border-primary/20 text-primary font-medium"
+                            >
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row gap-2 mt-2">
+                          {sub.links.map((link, linkIndex) => (
+                            <Button
+                              key={linkIndex}
+                              variant="outline"
+                              className="flex items-center gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                              asChild
+                            >
+                              <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                                <Github size={18} />
+                                <span>{link.label}</span>
+                                <ExternalLink size={16} className="group-hover:translate-x-1 transition-smooth" />
+                              </a>
+                            </Button>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
                   ))}
                 </div>
-                
-                {/* GitHub Link */}
-                <Button 
-                  variant="outline" 
-                  className="w-full group border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-bounce"
-                  asChild
-                >
-                  <a 
-                    href={project.githubUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2"
-                  >
-                    <Github size={18} />
-                    <span>GitHub Repository</span>
-                    <ExternalLink size={16} className="group-hover:translate-x-1 transition-smooth" />
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+              </div>
+            ) : (
+              <Card
+                key={index}
+                className="group hover:shadow-glow transition-all duration-300 hover:scale-105 border-0 shadow-elegant card-gradient overflow-hidden"
+              >
+                <CardHeader className="relative">
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-bold">
+                    {index + 1}
+                  </div>
+                  <CardTitle className="text-xl md:text-2xl font-semibold text-foreground leading-tight">
+                    {project.title}
+                  </CardTitle>
+                </CardHeader>
+
+                <CardContent className="space-y-4">
+                  <CardDescription className="text-base leading-relaxed text-muted-foreground whitespace-pre-line">
+                    {project.description}
+                  </CardDescription>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.techStack.map((tech, techIndex) => (
+                      <Badge
+                        key={techIndex}
+                        variant="secondary"
+                        className="tech-gradient border-primary/20 text-primary font-medium"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-2 mt-2">
+                    {project.links.map((link, linkIndex) => (
+                      <Button
+                        key={linkIndex}
+                        variant="outline"
+                        className="flex items-center gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                        asChild
+                      >
+                        <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                          <Github size={18} />
+                          <span>{link.label}</span>
+                          <ExternalLink size={16} className="group-hover:translate-x-1 transition-smooth" />
+                        </a>
+                      </Button>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )
+          )}
         </div>
       </div>
     </section>
