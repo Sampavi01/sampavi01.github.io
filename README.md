@@ -27,7 +27,7 @@ Follow these steps:
 git clone https://github.com/Sampavi01/sampavi01.github.io.git
 
 # Step 2: Navigate to the project directory.
-cd sampavi01.github.io.git
+cd sampavi01.github.io
 
 # Step 3: Install the necessary dependencies.
 npm i
