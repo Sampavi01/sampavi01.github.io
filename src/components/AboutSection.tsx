@@ -16,17 +16,12 @@ const AboutSection = () => {
               <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-accent/20 rounded-full"></div>
 
               <p className="text-lg md:text-xl leading-relaxed text-foreground/90">
-                I am an Electrical Engineering student with a focus on creating intelligent and efficient AI systems. 
-                I develop applications that handle complex workflows, integrate multiple data sources, and deliver practical solutions for real-world problems.
+                I’m an Electrical Engineering student passionate about building intelligent AI systems. 
+                I create autonomous agents, interactive tools, and scalable platforms that combine deep learning, predictive modeling, and multi-source data.
               </p>
 
               <p className="text-lg md:text-xl leading-relaxed text-foreground/90 mt-6">
-                My experience includes building autonomous AI agents, interactive tools, and scalable systems that combine predictive modeling, deep learning, and data-driven insights. 
-                I am committed to exploring emerging technologies to enhance system performance and usability.
-              </p>
-
-              <p className="text-lg md:text-xl leading-relaxed text-foreground/90 mt-6">
-                Through hands-on projects, I aim to bridge advanced AI concepts with tangible applications, delivering solutions that are both innovative and impactful.
+                My goal is to turn advanced AI concepts into practical, real-world solutions that are both innovative and impactful.
               </p>
             </div>
           </Card>
